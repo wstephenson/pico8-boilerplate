@@ -6,10 +6,22 @@ __lua__
 state=nil
 --table of all game states
 states={}
---default state
+--default states
+states.menu={}
 states.play={}
 
+function states.menu:init()
+	states.menu.next_state="play"
+end
+
+function states.menu:draw()
+end
+
+function states.menu:update()
+end
+
 function states.play:init()
+	states.play.next_state="menu"
 end
 
 function states.play:draw()
@@ -18,25 +30,21 @@ end
 function states.play:update()
 end
 
-
 function update_state()
-	if(not state)state="play"
 	local next_state=states[state].next_state
 	if(next_state)then
 		state=next_state
-		states[state].next_state=nil
 	end
 end
 
 function _init()
-	update_state()
-	states[state]:init()
+	state="menu"
+	for k,v in pairs(states) do v.init() end
 end
 
 function _draw()
 	states[state]:draw()
 end
-
 
 function _update()
 	states[state]:update()
