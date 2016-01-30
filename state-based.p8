@@ -1,7 +1,7 @@
 pico-8 cartridge // http://www.pico-8.com
 version 5
 __lua__
---vim: set ft=lua ts=1 sw=1 noet:
+-- vim: set ft=lua ts=1 sw=1 noet:
 --current game state
 state=nil
 --table of all game states
