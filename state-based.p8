@@ -39,7 +39,7 @@ end
 
 function _init()
 	state="menu"
-	for k,v in pairs(states) do v.init() end
+	for k,v in pairs(states) do v:init() end
 end
 
 function _draw()
