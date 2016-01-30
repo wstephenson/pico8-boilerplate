@@ -11,7 +11,7 @@ states.menu={}
 states.play={}
 
 function states.menu:init()
-	states.menu.next_state="play"
+	self.next_state="play"
 end
 
 function states.menu:draw()
@@ -21,7 +21,7 @@ function states.menu:update()
 end
 
 function states.play:init()
-	states.play.next_state="menu"
+	self.next_state="menu"
 end
 
 function states.play:draw()
